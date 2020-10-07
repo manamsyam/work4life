@@ -1,0 +1,25 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: AzureResourceManagerTemplateDeployment@3
+  displayName: 'ARM Template deployment: Resource Group scope'
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'Azure subscription 1 (75f16c9e-9f04-46d6-a527-07a206addc8c)'
+    subscriptionId: '75f16c9e-9f04-46d6-a527-07a206addc8c'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'Work4life'
+    location: 'East US'
+    templateLocation: 'Linked artifact'
+    csmFile: 'ARM templates/VM/deploy.json'
+    csmParametersFile: 'ARM templates/VM/parameters.json'
+    deploymentMode: 'Incremental'
