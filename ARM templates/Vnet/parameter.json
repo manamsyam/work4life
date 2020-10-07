@@ -6,10 +6,10 @@
       "value": "Vnet1"
     },
     "vnetAddressPrefix": {
-      "value": "10.0.0.0/16"
+      "value": "10.0.0.0/24"
     },
     "subnet1Prefix": {
-      "value": "10.0.0.0/24"
+      "value": "10.0.0.0/25"
     },
     "subnet1Name": {
       "value": "subnet1vm"
