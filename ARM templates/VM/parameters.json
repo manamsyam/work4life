@@ -1,0 +1,68 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "eastus"
+        },
+        "networkInterfaceName": {
+            "value": "vm4life701"
+        },
+        "networkSecurityGroupName": {
+            "value": "vm4life-nsg"
+        },
+        "networkSecurityGroupRules": {
+            "value": [
+                {
+                    "name": "SSH",
+                    "properties": {
+                        "priority": 300,
+                        "protocol": "TCP",
+                        "access": "Allow",
+                        "direction": "Inbound",
+                        "sourceAddressPrefix": "*",
+                        "sourcePortRange": "*",
+                        "destinationAddressPrefix": "*",
+                        "destinationPortRange": "22"
+                    }
+                }
+            ]
+        },
+        "subnetName": {
+            "value": "subnet1vm"
+        },
+        "virtualNetworkId": {
+            "value": "/subscriptions/75f16c9e-9f04-46d6-a527-07a206addc8c/resourceGroups/Work4life/providers/Microsoft.Network/virtualNetworks/Vnet1"
+        },
+        "publicIpAddressName": {
+            "value": "vm4life-ip"
+        },
+        "publicIpAddressType": {
+            "value": "Dynamic"
+        },
+        "publicIpAddressSku": {
+            "value": "Basic"
+        },
+        "virtualMachineName": {
+            "value": "vm4life"
+        },
+        "virtualMachineComputerName": {
+            "value": "vm4life"
+        },
+        "virtualMachineRG": {
+            "value": "Work4life"
+        },
+        "osDiskType": {
+            "value": "Premium_LRS"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_D2s_v3"
+        },
+        "adminUsername": {
+            "value": "vm4life"
+        },
+        "adminPassword": {
+            "value": null
+        }
+    }
+}
